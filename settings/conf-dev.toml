@@ -1,0 +1,14 @@
+[http]
+addr = "127.0.0.1:3000"
+
+[logger]
+log_level = "debug"
+log_type = "single"
+log_name = "storage/logs/logs.log"
+log_max_backup = 5
+log_max_age = 30
+log_compress = false
+
+
+[app]
+env = "dev"
