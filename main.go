@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"yxkitchen-backend/bootstrap"
 	"yxkitchen-backend/conf"
 	"yxkitchen-backend/pkg/logger"
 
@@ -10,6 +11,9 @@ import (
 
 func start() {
 	logger.InitLogger(conf.C.Logger)
+	bootstrap.SetupDB()
+	bootstrap.SetupRedis()
+	bootstrap.RunWeb()
 }
 
 func main() {
@@ -33,13 +37,13 @@ func main() {
 	}
 	app.Action = func(ctx *cli.Context) error {
 		if err := conf.LoadConfig(ctx.String("config")); err != nil {
-			logger.FatalString("Main", "load config", err.Error())
+			logger.FatalString("main", "load config", err.Error())
 		}
 		start()
 		return nil
 	}
 	if err := app.Run(os.Args); err != nil {
-		logger.FatalString("Main", "app run", err.Error())
+		logger.FatalString("main", "app run", err.Error())
 	}
 
 }

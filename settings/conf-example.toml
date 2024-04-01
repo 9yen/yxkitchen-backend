@@ -11,10 +11,7 @@ log_compress = false
 
 
 [app]
-app_name = "yxkitchen-backend"
 env = "dev"
-app_url = "http://localhost:3000"
-api_domain = ""
 
 [paging]
 perpage = 10                    # 默认每页条数
@@ -23,26 +20,15 @@ url_query_sort = "sort"         # URL 中用以分辨排序的参数（使用 id
 url_query_order = "order"       # URL 中用以分辨排序规则的参数（辨别是正序还是倒序） 此值若修改需一并修改请求验证规则
 url_query_per_page = "per_page" # URL 中用以分辨每页条数的参数 此值若修改需一并修改请求验证规则
 
-[database]
-db_connection = "mysql"
-
 [mysql]
 db_host = "127.0.0.1"
 db_port = 3306
-db_database = "yxkitchen-backend"
-db_username = "root"
-db_password = "secret"
-db_charset = "utf8mb4"
+db_database = "yxxxxxx"
+db_username = "rxxx"
+db_password = "sxxxx"
 db_max_idle_connections = 100
 db_max_open_connections = 25
 db_max_life_seconds = 300
 
 [sqlite]
 db_sql_file = "database/database.db"
-
-[redis]
-redis_host = "127.0.0.1"
-redis_port = 6379
-redis_username = ""
-redis_password = ""
-redis_database = 1
